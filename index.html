@@ -4,48 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Weekly Meal Planner</title>
-  <meta name="description" content="Plan your meals for the week and get one shopping list automatically. Free, no sign-up.">
+  <meta name="description" content="Tick the food you like and get a week of meals plus one shopping list. Free, no sign-up.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Weekly Meal Planner</h1>
-    <p>Add a meal to each day. Your shopping list builds itself.</p>
+    <p>Tick what you like, plan your week in one tap, and get your shopping list.</p>
   </header>
 
   <main>
-    <!-- The form for adding a meal -->
+    <!-- Step 1: what the person likes, filled in by app.js -->
     <section class="card">
-      <h2>Add a meal</h2>
-      <form id="meal-form">
-        <label>
-          Day
-          <select id="meal-day"></select>
-        </label>
-        <label>
-          Meal name
-          <input id="meal-name" type="text" placeholder="e.g. Chicken stir fry" required>
-        </label>
-        <label>
-          Ingredients <small>(one per line)</small>
-          <textarea id="meal-ingredients" rows="4" placeholder="chicken&#10;peppers&#10;rice"></textarea>
-        </label>
-        <button type="submit">Add meal</button>
-      </form>
+      <h2>What do you like?</h2>
+      <div id="likes" class="chips"></div>
+      <button id="plan-week" type="button">Plan my week</button>
+      <p id="plan-note" class="muted"></p>
     </section>
 
-    <!-- The week: one box per day, filled in by app.js -->
+    <!-- Step 2: the week, one row per day, filled in by app.js -->
     <section class="card">
       <h2>This week</h2>
       <div id="week"></div>
     </section>
 
-    <!-- The combined shopping list, filled in by app.js -->
+    <!-- Step 3: the combined shopping list, filled in by app.js -->
     <section class="card">
       <h2>Shopping list</h2>
       <ul id="shopping-list"></ul>
-      <p id="empty-list" class="muted">Add a meal and its ingredients will appear here.</p>
+      <p id="empty-list" class="muted">Plan your week and the ingredients will appear here.</p>
       <button id="clear-week" class="secondary" type="button">Start a new week</button>
+    </section>
+
+    <!-- People's own meals -->
+    <section class="card">
+      <h2>Add your own meal</h2>
+      <form id="meal-form">
+        <label>
+          Meal name
+          <input id="meal-name" type="text" placeholder="e.g. Grandma's stew" required>
+        </label>
+        <label>
+          Ingredients <small>(one per line)</small>
+          <textarea id="meal-ingredients" rows="4" placeholder="beef&#10;carrots&#10;potatoes"></textarea>
+        </label>
+        <fieldset>
+          <legend>What kind of meal is it?</legend>
+          <div id="meal-tags" class="chips"></div>
+        </fieldset>
+        <button type="submit">Save meal</button>
+      </form>
+      <h3>My meals</h3>
+      <ul id="my-meals"></ul>
+      <p class="muted">Your meals are private and saved on this device. Sharing them with others is coming soon.</p>
     </section>
   </main>
 
@@ -53,6 +64,7 @@
     <p>Your plan is saved on this device only. No sign-up needed.</p>
   </footer>
 
+  <script src="meals.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
