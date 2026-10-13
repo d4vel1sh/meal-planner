@@ -66,7 +66,19 @@ button.remove { background: transparent; color: var(--muted); padding: 2px 8px; 
 .day:first-child { border-top: none; }
 .day h3 { margin: 0; font-size: 1rem; }
 .day p { margin: 0; }
+.day-controls { display: flex; gap: 8px; align-items: center; margin-top: 4px; }
+.day-controls select { margin-top: 0; flex: 1; min-width: 0; }
 .meal { display: flex; justify-content: space-between; align-items: center; }
+#my-meals { list-style: none; padding: 0; }
+
+/* Tick-able buttons for food types */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.chip { background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; }
+.chip[aria-pressed="true"] { background: var(--accent); color: white; border-color: var(--accent); }
+button.small { padding: 8px 12px; }
+fieldset { border: none; padding: 0; margin: 0 0 12px; }
+legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
+h3 { font-size: 1rem; }
 
 /* Shopping list */
 #shopping-list { list-style: none; padding: 0; }
