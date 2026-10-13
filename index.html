@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Meal Planner</title>
+  <meta name="description" content="Plan your meals for the week and get one shopping list automatically. Free, no sign-up.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weekly Meal Planner</h1>
+    <p>Add a meal to each day. Your shopping list builds itself.</p>
+  </header>
+
+  <main>
+    <!-- The form for adding a meal -->
+    <section class="card">
+      <h2>Add a meal</h2>
+      <form id="meal-form">
+        <label>
+          Day
+          <select id="meal-day"></select>
+        </label>
+        <label>
+          Meal name
+          <input id="meal-name" type="text" placeholder="e.g. Chicken stir fry" required>
+        </label>
+        <label>
+          Ingredients <small>(one per line)</small>
+          <textarea id="meal-ingredients" rows="4" placeholder="chicken&#10;peppers&#10;rice"></textarea>
+        </label>
+        <button type="submit">Add meal</button>
+      </form>
+    </section>
+
+    <!-- The week: one box per day, filled in by app.js -->
+    <section class="card">
+      <h2>This week</h2>
+      <div id="week"></div>
+    </section>
+
+    <!-- The combined shopping list, filled in by app.js -->
+    <section class="card">
+      <h2>Shopping list</h2>
+      <ul id="shopping-list"></ul>
+      <p id="empty-list" class="muted">Add a meal and its ingredients will appear here.</p>
+      <button id="clear-week" class="secondary" type="button">Start a new week</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Your plan is saved on this device only. No sign-up needed.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

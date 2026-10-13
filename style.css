@@ -1,0 +1,77 @@
+/* Colours used across the page, kept in one place so they're easy to change */
+:root {
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --text: #2b2b2b;
+  --muted: #6b6b6b;
+  --accent: #2f7d4f;
+  --border: #e2ded5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+header, main, footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header { padding-top: 24px; }
+h1 { margin: 0 0 4px; color: var(--accent); }
+h2 { margin-top: 0; font-size: 1.15rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+label { display: block; margin-bottom: 12px; font-weight: 600; }
+small, .muted { color: var(--muted); font-weight: normal; }
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+button {
+  font: inherit;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+button.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+button.remove { background: transparent; color: var(--muted); padding: 2px 8px; }
+
+/* One row per day */
+.day { border-top: 1px solid var(--border); padding: 8px 0; }
+.day:first-child { border-top: none; }
+.day h3 { margin: 0; font-size: 1rem; }
+.day p { margin: 0; }
+.meal { display: flex; justify-content: space-between; align-items: center; }
+
+/* Shopping list */
+#shopping-list { list-style: none; padding: 0; }
+#shopping-list li { padding: 6px 0; }
+#shopping-list input { display: inline; width: auto; margin-right: 8px; }
+#shopping-list .done span { text-decoration: line-through; color: var(--muted); }
+
+footer { color: var(--muted); font-size: 0.9rem; padding-bottom: 24px; }
